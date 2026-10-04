@@ -1,18 +1,20 @@
-# Vowlo Wedding Planner Mini App — Prototype
+# Vowlo Wedding Planner — V3
 
-Mobile-first local prototype. Open `index.html` in a browser.
+Mobile-first PWA prototype for GitHub Pages.
 
 ## Included
-- Home dashboard and wedding countdown
-- Planning checklist + progress
-- Guests / RSVP
-- Budget + expenses
-- Setup
-- Vendors and wedding-day timeline
-- Additional focused sections: venues, photos, music, honeymoon, emergency kit
-- Automatic local save via localStorage
-- JSON backup export
-- Responsive bottom navigation
+- Dashboard + countdown + progress
+- Checklist with owner, category and due date
+- Guest / RSVP / meal / dietary / table tracking
+- Budget with estimate, final cost and paid amount
+- Vendors, wedding-day timeline, venue comparison
+- Seating tables and guest assignments
+- Photo shot list, music, honeymoon, emergency kit
+- Gifts, inspiration and key contacts
+- JSON backup export/import
+- Local browser autosave
+- PWA manifest, icons, offline cache and cache-version upgrade
+- V1/V2 local-data migration
 
-## Next production step
-For multi-device accounts and a sellable SaaS/PWA: add authentication, cloud database, secure sync, import/export, service worker/offline cache, icons, billing/licensing, and deployment.
+## Important production boundary
+This version stores data only in the browser on the current device. GitHub Pages is suitable for the static app, but a commercial multi-device product still needs authentication, a secure cloud database/sync layer, privacy/terms, and account/data deletion controls.
