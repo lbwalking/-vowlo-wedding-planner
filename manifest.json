@@ -1,1 +1,10 @@
-{"name":"Vowlo Wedding Planner","short_name":"Vowlo","start_url":"./","display":"standalone","background_color":"#f8f6f1","theme_color":"#56685d","description":"A calm, simple wedding planning mini app."}
+{
+  "name":"Vowlo Wedding Planner",
+  "short_name":"Vowlo",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#f7f4ee",
+  "theme_color":"#56685d",
+  "description":"A calm, mobile-first wedding planning companion."
+}
