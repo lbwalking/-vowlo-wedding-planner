@@ -1,20 +1,21 @@
-# Vowlo Wedding Planner — V3
+# Vowlo Wedding Planner — V4 Cloud release candidate
 
-Mobile-first PWA prototype for GitHub Pages.
+An incremental mobile-first upgrade of V3. Existing deployment:
+https://lbwalking.github.io/-vowlo-wedding-planner/
 
-## Included
-- Dashboard + countdown + progress
-- Checklist with owner, category and due date
-- Guest / RSVP / meal / dietary / table tracking
-- Budget with estimate, final cost and paid amount
-- Vendors, wedding-day timeline, venue comparison
-- Seating tables and guest assignments
-- Photo shot list, music, honeymoon, emergency kit
-- Gifts, inspiration and key contacts
-- JSON backup export/import
-- Local browser autosave
-- PWA manifest, icons, offline cache and cache-version upgrade
-- V1/V2 local-data migration
+**Cloud is disabled pending Supabase project configuration and hosted verification. This is not a production-ready cloud launch.** Device-only planning remains available.
 
-## Important production boundary
-This version stores data only in the browser on the current device. GitHub Pages is suitable for the static app, but a commercial multi-device product still needs authentication, a secure cloud database/sync layer, privacy/terms, and account/data deletion controls.
+- Original five tabs and all V3 planning sections retained.
+- Record editing, validated backup/restore, preserved V3 data.
+- Email signup/login/reset/logout flows implemented with the Supabase SDK.
+- Per-account offline outbox, revision-checked saves, foreground multi-device refresh and explicit conflicts.
+- SQL schema, RLS and self-account deletion included.
+- Static offline assets only; no auth/database response caching.
+
+See [architecture and audit](docs/ARCHITECTURE.md), [setup](docs/SUPABASE-SETUP.md) and [verification report](docs/TEST-REPORT.md).
+
+## Development
+
+Serve this directory over HTTP, for example `python3 -m http.server 8080`. No build step is required. `config.js` accepts only public client credentials. Never commit backend or SMTP secrets.
+
+Tests require Node, Playwright/Chromium and @electric-sql/pglite. Run `node tests/browser.cjs` and `node tests/rls.cjs` from this directory with these dependencies resolvable. Browser cloud tests use mocked HTTP responses through the real Supabase SDK; they do not replace hosted Supabase acceptance testing.
